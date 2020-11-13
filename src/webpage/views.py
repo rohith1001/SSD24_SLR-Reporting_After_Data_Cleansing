@@ -3,19 +3,33 @@ from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib
 import seaborn as sns
 from pybtex.database.input import bibtex
 from django.conf import settings
 import pandas as pd
 import string
 import os
+from matplotlib.pyplot import figure, plot
+
+
+def plotAndClear(imgName):
+    imageName = os.path.join(settings.MEDIA_ROOT, imgName)
+    plt.savefig(imageName, bbox_inches='tight')
+    plt.clf()
 
 
 def collectImages(file_name):
     myDataFrame = pd.read_csv(file_name)
     myDataFrame.drop(myDataFrame.columns[myDataFrame.columns.str.contains(
         'unnamed', case=False)], axis=1, inplace=True)
-    print(myDataFrame.head(5))
+    sns.heatmap(myDataFrame.isnull(), cmap='viridis', cbar='true')
+    plotAndClear("heatMap.png")
+    sns.set_theme(style="darkgrid")
+    ax = sns.countplot(x="months", data=myDataFrame)
+    plotAndClear("monthWise.png")
+    sns.catplot(x="year", kind="count", palette="ch:.25", data=myDataFrame)
+    plotAndClear("yearWise.png")
 
 
 def parseToCsv(bib_data):
