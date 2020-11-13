@@ -5,8 +5,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pybtex.database.input import bibtex
+from django.conf import settings
 import pandas as pd
 import string
+import os
+
+
+def collectImages(file_name):
+    myDataFrame = pd.read_csv(file_name)
+    myDataFrame.drop(myDataFrame.columns[myDataFrame.columns.str.contains(
+        'unnamed', case=False)], axis=1, inplace=True)
+    print(myDataFrame.head(5))
 
 
 def parseToCsv(bib_data):
@@ -99,7 +108,9 @@ def parseToCsv(bib_data):
     df['doi'] = df['id'].map(doi)
     df['ISSN'] = df['id'].map(issn)
     df['months'] = df['id'].map(months)
-    df.to_csv('ACM_Oct21.csv')
+    file_name = os.path.join(settings.MEDIA_ROOT, 'output.csv')
+    df.to_csv(file_name)
+    collectImages(file_name)
 
 
 def readUploadedFile(uploaded_file):
