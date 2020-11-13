@@ -29,7 +29,10 @@ def collectImages(file_name):
     ax = sns.countplot(x="months", data=myDataFrame)
     plotAndClear("monthWise.png")
     sns.catplot(x="year", kind="count", palette="ch:.25", data=myDataFrame)
-    plotAndClear("yearWise.png")
+    plotAndClear("yearWise1.png")
+    sns.set_theme(style="darkgrid")
+    ax = sns.countplot(x="year", data=myDataFrame)
+    plotAndClear("yearWise2.png")
 
 
 def parseToCsv(bib_data):
