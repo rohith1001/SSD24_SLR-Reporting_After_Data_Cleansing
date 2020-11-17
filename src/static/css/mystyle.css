@@ -1,16 +1,16 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-}
+} */
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #112128;
-}
+} */
 
 .container {
   position: relative;
@@ -22,8 +22,9 @@ body {
 }
 
 .container .card {
+  align-items: center;
   position: relative;
-  max-width: 450px;
+  max-width: 1000px;
   background: #fff;
   margin: 10px;
   padding: 15px;

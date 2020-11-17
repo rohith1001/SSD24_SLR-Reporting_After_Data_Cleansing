@@ -12,15 +12,20 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="{% static "css/app.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/mystyle.css' %}"
+    />
     <title>{% block title %}SSD Team 24{% endblock %}</title>
   </head>
-  <body style="background-color: #fffdd0">
+  <body>
     <nav
       class="navbar navbar-expand-lg navbar-light mb-4"
-      style="background-color: #d05050"
+      style="background-color: #d05050; width: auto"
     >
-      <div class="container">
+      <div class="basecontainer">
         <a class="navbar-brand" href="{% url 'home' %}"></a>
         <button
           class="navbar-toggler"
@@ -45,7 +50,7 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="basecontainer">
       <div class="row justify-content-center">
         <div class="col-lg-10 col-md-12">
           <div class="card mb-4">
