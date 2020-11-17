@@ -14,7 +14,8 @@ from matplotlib.pyplot import figure, plot
 
 
 def plotAndClear(imgName):
-    imageName = os.path.join(settings.STATICFILES_DIRS[0], imgName)
+    imageName = os.path.join(settings.STATICFILES_DIRS[0], 'images_home')
+    imageName = os.path.join(imageName, imgName)
     plt.savefig(imageName, bbox_inches='tight')
     plt.clf()
 
@@ -153,3 +154,11 @@ def upload(request):
 
 def homeView(request):
     return render(request, 'home.html', {})
+
+
+def homeIeee(request):
+    return render(request, 'home_ieee.html', {})
+
+
+def homeAcm(request):
+    return render(request, 'home_acm.html', {})
