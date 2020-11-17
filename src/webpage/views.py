@@ -14,7 +14,7 @@ from matplotlib.pyplot import figure, plot
 
 
 def plotAndClear(imgName):
-    imageName = os.path.join(settings.MEDIA_ROOT, imgName)
+    imageName = os.path.join(settings.STATICFILES_DIRS[0], imgName)
     plt.savefig(imageName, bbox_inches='tight')
     plt.clf()
 
@@ -24,15 +24,15 @@ def collectImages(file_name):
     myDataFrame.drop(myDataFrame.columns[myDataFrame.columns.str.contains(
         'unnamed', case=False)], axis=1, inplace=True)
     sns.heatmap(myDataFrame.isnull(), cmap='viridis', cbar='true')
-    plotAndClear("heatMap.png")
+    plotAndClear("heatmap.png")
     sns.set_theme(style="darkgrid")
     ax = sns.countplot(x="months", data=myDataFrame)
-    plotAndClear("monthWise.png")
+    plotAndClear("monthwise.png")
     sns.catplot(x="year", kind="count", palette="ch:.25", data=myDataFrame)
-    plotAndClear("yearWise1.png")
+    plotAndClear("yearwise1.png")
     sns.set_theme(style="darkgrid")
     ax = sns.countplot(x="year", data=myDataFrame)
-    plotAndClear("yearWise2.png")
+    plotAndClear("yearwise2.png")
 
 
 def parseToCsv(bib_data):
