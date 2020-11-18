@@ -29,11 +29,17 @@ def collectImages(file_name):
     sns.set_theme(style="darkgrid")
     ax = sns.countplot(x="months", data=myDataFrame)
     plotAndClear("monthwise.png")
-    sns.catplot(x="year", kind="count", palette="ch:.25", data=myDataFrame)
-    plotAndClear("yearwise1.png")
     sns.set_theme(style="darkgrid")
     ax = sns.countplot(x="year", data=myDataFrame)
-    plotAndClear("yearwise2.png")
+    plotAndClear("yearwise.png")
+    fig_dims = (10, 4)
+    fig, ax = plt.subplots(figsize=fig_dims)
+    sns.countplot(x="year", ax=ax, data=myDataFrame)
+    plotAndClear("yearwise111.png")
+    sns.set_theme(style="darkgrid")
+    ax = sns.countplot(x="number", data=myDataFrame)
+    plotAndClear("numpages.png")
+    # is this the right way???
 
 
 def parseToCsv(bib_data):
@@ -129,6 +135,18 @@ def parseToCsv(bib_data):
     file_name = os.path.join(settings.MEDIA_ROOT, 'output.csv')
     df.to_csv(file_name)
     collectImages(file_name)
+    df['keywords'] = df['keywords'].str.upper()
+    mydf = df
+    mydf['keywords'] = mydf['keywords'].astype(str)
+    count = df.keywords.apply(
+        lambda x: pd.value_counts(x.split(","))).sum(axis=0)
+    file_name = os.path.join(settings.MEDIA_ROOT, 'keywords.csv')
+    count.to_csv(file_name)
+    mydf['author'] = mydf['author'].astype(str)
+    count_auth = mydf.author.apply(
+        lambda x: pd.value_counts(x.split(","))).sum(axis=0)
+    file_name = os.path.join(settings.MEDIA_ROOT, 'author.csv')
+    count_auth.to_csv(file_name)
 
 
 def readUploadedFile(uploaded_file):
