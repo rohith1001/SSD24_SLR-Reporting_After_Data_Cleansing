@@ -2,89 +2,126 @@
 <div class="container">
   {% load static %}
   <div class="card">
-    <h2>Card heatmap</h2>
-    <div class="imgBx"><img src="{% static "images_ieee/heatmap.png" %}" /></div>
+    <h2>Heatmap</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/heatmap.png" %}" />
+    </div>
     <div class="content">
       <p>
-        Heatmap Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This Heatmap shows that column ISSN contains majority of null Values so
+        it will not contibute towards analysis. It will be better to drop it.
       </p>
     </div>
   </div>
+
   <div class="card">
-    <h2>Card monthwise</h2>
-    <div class="imgBx"><img src="{% static "images_ieee/monthwise.png" %}" /></div>
+    <h2>Monthwise</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/monthwise.png" %}" />
+    </div>
     <div class="content">
       <p>
-        monthwise Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This bar graph on the data sample shows that most papers in IEEE journal
+        were published month of June. We can also see that very less papers were
+        published in the month of Jan, Feb and October.
       </p>
     </div>
   </div>
+
   <div class="card">
-    <h2>Card yearwise2</h2>
-    <div class="imgBx"><img src="{% static "images_ieee/yearwise2.png" %}" /></div>
+    <h2>Yearwise</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/yearwise.png" %}" />
+    </div>
     <div class="content">
       <p>
-        yearwise2 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This bar graph on the data sample shows that majority of papers were
+        published in year 2019. We can also see that very less number of
+        publications are there in year 2017.
       </p>
     </div>
   </div>
+
   <div class="card">
-    <h2>Card piechart</h2>
-    <div class="imgBx"><img src="{% static "images_ieee/piechart.png" %}" /></div>
+    <h2>Piechart</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/piechart.png" %}" />
+    </div>
     <div class="content">
       <p>
-        piechart Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This pie chart shows the top 5 keywords that occured in various research
+        papers. Mostly research papers are related to python and Data science
+        fields.
       </p>
     </div>
   </div>
+
   <div class="card">
-    <h2>Card noofpages</h2>
-    <div class="imgBx"><img src="{% static "images_ieee/noofpages.png" %}" /></div>
+    <h2>Number of pages</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/noofpages.png" %}" />
+    </div>
     <div class="content">
       <p>
-        noofpages Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This count plot shows the number of pages in a research paper and count
+        of such research papers. We can see that the majority of research papers
+        are of medium length with 4-5 pages.
       </p>
     </div>
   </div>
-    <div class="card">
-      <h2>Card noofpublications</h2>
-      <div class="imgBx"><img src="{% static "images_ieee/noofpublications.png" %}" /></div>
-      <div class="content">
-        <p>
-          noofpublications Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Sint quibusdam quia modi! Aperiam saepe omnis facilis at dolores!
-          Repellat tenetur saepe quia, iste numquam reprehenderit. Natus
-          pariatur assumenda quisquam repellendus?
-        </p>
-      </div>
+
+  <div class="card">
+    <h2>Number of publications</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/noofpublications.png" %}" />
     </div>
-    <div class="card">
-      <h2>Card keywordcounts</h2>
-      <div class="imgBx"><img src="{% static "images_ieee/keywordcounts.png" %}" /></div>
-      <div class="content">
-        <p>
-          keywordcounts Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Sint quibusdam quia modi! Aperiam saepe omnis facilis at dolores!
-          Repellat tenetur saepe quia, iste numquam reprehenderit. Natus
-          pariatur assumenda quisquam repellendus?
-        </p>
-      </div>
+    <div class="content">
+      <p>
+        This graph shows the data sample mostly contains publishers with one
+        publication in IEEE journal. There are 140+ such publishers.
+      </p>
     </div>
-    {% endblock%}
+  </div>
+
+  <div class="card">
+    <h2>Keyword counts</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/keywordcounts.png" %}" />
+    </div>
+    <div class="content">
+      <p>
+        This graph shows the number of occurrences of different keywords. Here,
+        there are around 700-800 keywords that occur only 1 time and less than
+        10 keywords that occur 4 times.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Line plot of keyword counts</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/lineplot_keywords.png" %}" />
+    </div>
+    <div class="content">
+      <p>
+        This line plot shows the number of occurrences of top 5 keywords. We can
+        see that the keyword "Python" has the most number of occurrences.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Line plot of author counts</h2>
+    <div class="imgBx">
+      <img src="{% static "images_ieee/lineplot_authors.png" %}" />
+    </div>
+    <div class="content">
+      <p>
+        This line plot shows top 5 authors as per the number of research papers
+        published by them. We can see that there are 2 authors with 2
+        publications.
+      </p>
+    </div>
   </div>
 </div>
+{% endblock%}

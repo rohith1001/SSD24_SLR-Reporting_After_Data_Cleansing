@@ -3,100 +3,96 @@
   {% load static %}
   <div class="card">
     <h2>Heatmap before data cleansing</h2>
-    <div class="imgBx"><img src="{% static "images_acm/heatmap(prev).png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_acm/heatmap(prev).png" %}" />
+    </div>
     <div class="content">
       <p>
-        Heatmap Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This heatmap clearly shows that there are lot of null values in
+        'number', 'volume', 'ISSN', 'months' columns. These columns would not
+        contribute to our analysis and it is better to drop them.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Heatmap after data cleansing</h2>
-    <div class="imgBx"><img src="{% static "images_acm/heatmap(af).png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_acm/heatmap(af).png" %}" />
+    </div>
     <div class="content">
       <p>
-        Heatmap Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This is the heatmap representation after dropping 'number', 'volume',
+        'ISSN', 'months' columns. The remaining columns can contribute to our
+        analysis, hence are not dropped.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Keywords</h2>
-    <div class="imgBx"><img src="{% static "images_acm/keywords.png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_acm/keywords.png" %}" />
+    </div>
     <div class="content">
       <p>
-        keywords Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This graph shows the number of occurrences for different keywords. Here
+        there are around 140+ keywords which occur only 1 time and 20+ keywords
+        that occur 2 times.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Yearwise</h2>
     <div class="imgBx"><img src="{% static "images_acm/year.png" %}" /></div>
     <div class="content">
       <p>
-        yearwise Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This bar graph on the data sample shows that majority of papers were
+        published in year 2017 and 2019. We can also see that there are very
+        less number of publications in the year 2018.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Piechart</h2>
-    <div class="imgBx"><img src="{% static "images_acm/piechart.png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_acm/piechart.png" %}" />
+    </div>
     <div class="content">
       <p>
-        piechart Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This piechart shows the top 5 keywords that occurred in various research
+        papers. As we see from the analysis, mostly research papers are related
+        to python.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Number of pages</h2>
-    <div class="imgBx"><img src="{% static "images_acm/numpages.png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_acm/numpages.png" %}" />
+    </div>
     <div class="content">
       <p>
-        noofpages Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This count plot shows the number of pages in a research paper and count
+        of such research papers. We can see that the majority of research papers
+        are of 5 pages length.
       </p>
     </div>
   </div>
-    <div class="card">
-      <h2>Number of publications</h2>
-      <div class="imgBx"><img src="{% static "images_acm/num_pub.png" %}" /></div>
-      <div class="content">
-        <p>
-          num_pub Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Sint quibusdam quia modi! Aperiam saepe omnis facilis at dolores!
-          Repellat tenetur saepe quia, iste numquam reprehenderit. Natus
-          pariatur assumenda quisquam repellendus?
-        </p>
-      </div>
+
+  <div class="card">
+    <h2>Number of publications</h2>
+    <div class="imgBx"><img src="{% static "images_acm/num_pub.png" %}" /></div>
+    <div class="content">
+      <p>
+        This graph depicts that the data sample mostly contains publishers with
+        only one publication in ACM journal. There are nearly 100 such
+        publishers.
+      </p>
     </div>
-    <div class="card">
-      <h2>Keyword counts</h2>
-      <div class="imgBx"><img src="{% static "images_acm/keywords.png" %}" /></div>
-      <div class="content">
-        <p>
-          keywordcounts Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Sint quibusdam quia modi! Aperiam saepe omnis facilis at dolores!
-          Repellat tenetur saepe quia, iste numquam reprehenderit. Natus
-          pariatur assumenda quisquam repellendus?
-        </p>
-      </div>
-    </div>
-    {% endblock%}
   </div>
 </div>
+{% endblock%}

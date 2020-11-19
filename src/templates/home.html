@@ -3,88 +3,99 @@
   {% load static %}
   <div class="card">
     <h2>Heatmap</h2>
-    <div class="imgBx"><img src="{% static "images_home/heatmap.png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_home/heatmap.png" %}" />
+    </div>
     <div class="content">
       <p>
-        Heatmap Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This heatmap represents null values in every column(null values
+        represented as yellow patches). If too many null values exist in a
+        column, then it is better to drop that column, as it would not be
+        contributing to our analysis.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Monthwise</h2>
-    <div class="imgBx"><img src="{% static "images_home/monthwise.png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_home/monthwise.png" %}" />
+    </div>
     <div class="content">
       <p>
-        monthwise Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This bar graph on the data sample shows the trend in number of papers
+        published for every month. If month field is not specified, it would be
+        shown as 'none'.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Yearwise</h2>
-    <div class="imgBx"><img src="{% static "images_home/yearwise.png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_home/yearwise.png" %}" />
+    </div>
     <div class="content">
       <p>
-        yearwise Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This bar graph depicts the trends in number of papers published each
+        year. The range of years considered here depends on the data sample.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Piechart</h2>
-    <div class="imgBx"><img src="{% static "images_home/piechart.png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_home/piechart.png" %}" />
+    </div>
     <div class="content">
       <p>
-        piechart Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This pie chart shows the top 5 keywords that occured in all research
+        papers. It gives information about the top 5 research area trends.
       </p>
     </div>
   </div>
+
   <div class="card">
     <h2>Number of pages</h2>
-    <div class="imgBx"><img src="{% static "images_home/noofpages.png" %}" /></div>
+    <div class="imgBx">
+      <img src="{% static "images_home/noofpages.png" %}" />
+    </div>
     <div class="content">
       <p>
-        noofpages Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-        quibusdam quia modi! Aperiam saepe omnis facilis at dolores! Repellat
-        tenetur saepe quia, iste numquam reprehenderit. Natus pariatur assumenda
-        quisquam repellendus?
+        This count plot shows the number of pages in a research paper and count
+        of such research papers. This helps us study the trend in number of
+        pages in each research paper.
       </p>
     </div>
   </div>
-    <div class="card">
-      <h2>Number of publications</h2>
-      <div class="imgBx"><img src="{% static "images_home/noofpublications.png" %}" /></div>
-      <div class="content">
-        <p>
-          noofpublications Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Sint quibusdam quia modi! Aperiam saepe omnis facilis at dolores!
-          Repellat tenetur saepe quia, iste numquam reprehenderit. Natus
-          pariatur assumenda quisquam repellendus?
-        </p>
-      </div>
+
+  <div class="card">
+    <h2>Number of publications</h2>
+    <div class="imgBx">
+      <img src="{% static "images_home/noofpublications.png" %}" />
     </div>
-    <div class="card">
-      <h2>Keyword counts</h2>
-      <div class="imgBx"><img src="{% static "images_home/keywordcounts.png" %}" /></div>
-      <div class="content">
-        <p>
-          keyword counts Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Sint quibusdam quia modi! Aperiam saepe omnis facilis at dolores!
-          Repellat tenetur saepe quia, iste numquam reprehenderit. Natus
-          pariatur assumenda quisquam repellendus?
-        </p>
-      </div>
+    <div class="content">
+      <p>
+        This graph depicts the number of publications corresponding to a
+        publisher. For example, we could have many publishers that have only one
+        publication.
+      </p>
     </div>
-    {% endblock%}
+  </div>
+
+  <div class="card">
+    <h2>Keyword counts</h2>
+    <div class="imgBx">
+      <img src="{% static "images_home/keywordcounts.png" %}" />
+    </div>
+    <div class="content">
+      <p>
+        This graph shows the number of occurrences of different keywords. For
+        example, we can have some keywords with multiple occurrences and some
+        keywords with only single occurrence.
+      </p>
+    </div>
   </div>
 </div>
+{% endblock%}
