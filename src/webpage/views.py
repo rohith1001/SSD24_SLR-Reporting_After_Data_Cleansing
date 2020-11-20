@@ -20,6 +20,38 @@ def plotAndClear(imgName):
     plt.clf()
 
 
+def collectAuthorImages(file_name):
+    auth = pd.read_csv(file_name)
+    auth.rename(columns={'Unnamed: 0': 'authors'}, inplace=True)
+    auth.rename(columns={'0': 'no of publications'}, inplace=True)
+    sns.set_theme(style="darkgrid")
+    sns.countplot(y="no of publications", data=auth)
+    plotAndClear("noofpublications.png")
+    ad = auth.sort_values(by=['no of publications'], ascending=False)
+    ad[:5].plot.line(x='authors', y='no of publications',
+                     subplots=True, figsize=(7, 5))
+    plotAndClear("lineplot_authors.png")
+
+
+def collectKeywordImages(file_name):
+    keyword = pd.read_csv(file_name, sep=',')
+    keyword.rename(columns={'Unnamed: 0': 'words'}, inplace=True)
+    keyword.rename(columns={'0': 'keyword counts'}, inplace=True)
+    sns.set_theme(style="darkgrid")
+    fig_dims = (8, 6)
+    fig, ax = plt.subplots(figsize=fig_dims)
+    sns.countplot(y="keyword counts", ax=ax, data=keyword)
+    plotAndClear("keywordcounts.png")
+    pie_data = keyword.groupby(['words'])['keyword counts'].agg('sum')
+    sorted_pie_data = pie_data.sort_values(ascending=False)
+    sorted_pie_data[:5].plot.pie(subplots=True, figsize=(12, 7))
+    plotAndClear("piechart.png")
+    ld = keyword.sort_values(by=['keyword counts'], ascending=False)
+    ld[:5].plot.line(x='words', y='keyword counts',
+                     subplots=True, figsize=(7, 5))
+    plotAndClear("lineplot_keywords.png")
+
+
 def collectImages(file_name):
     myDataFrame = pd.read_csv(file_name)
     myDataFrame.drop(myDataFrame.columns[myDataFrame.columns.str.contains(
@@ -33,10 +65,6 @@ def collectImages(file_name):
     fig, ax = plt.subplots(figsize=fig_dims)
     sns.countplot(x="year", ax=ax, data=myDataFrame)
     plotAndClear("yearwise.png")
-    sns.set_theme(style="darkgrid")
-    ax = sns.countplot(x="number", data=myDataFrame)
-    plotAndClear("numpages.png")
-    # is this the right way???
 
 
 def parseToCsv(bib_data):
@@ -139,11 +167,13 @@ def parseToCsv(bib_data):
         lambda x: pd.value_counts(x.split(","))).sum(axis=0)
     file_name = os.path.join(settings.MEDIA_ROOT, 'keywords.csv')
     count.to_csv(file_name)
+    collectKeywordImages(file_name)
     mydf['author'] = mydf['author'].astype(str)
     count_auth = mydf.author.apply(
         lambda x: pd.value_counts(x.split(","))).sum(axis=0)
     file_name = os.path.join(settings.MEDIA_ROOT, 'author.csv')
     count_auth.to_csv(file_name)
+    collectAuthorImages(file_name)
 
 
 def readUploadedFile(uploaded_file):
